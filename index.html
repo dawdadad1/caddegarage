@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CaddeGarage — ETS2 dünyasında birlik, dostluk ve profesyonellik üzerine kurulu sanal lojistik ve konvoy topluluğu. Yolların en güçlü ekibiyle birlikte daha ileriye.">
+  <meta name="theme-color" content="#05070a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CaddeGarage | Sanal Lojistikte Yeni Bir Anlayış">
+  <meta property="og:description" content="Sanal yollarda gerçek takım ruhu — 1250+ üye, 50+ siyah tır, her cumartesi 21:00 TSİ konvoy.">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="assets/img/hero-photo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="assets/img/hero-photo.jpg" type="image/jpeg">
+  <title>CaddeGarage | Sanal Lojistikte Yeni Bir Anlayış — ETS2 Konvoy Topluluğu</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- SVG SPRITE -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="chromeFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".2" stop-color="#d7dde3"/><stop offset=".38" stop-color="#79828c"/>
+      <stop offset=".52" stop-color="#f2f5f8"/><stop offset=".66" stop-color="#565f68"/><stop offset=".84" stop-color="#ccd3da"/><stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <symbol id="i-crown" viewBox="0 0 64 52">
+    <path fill="url(#chromeFill)" stroke="#04070b" stroke-width="2.4" stroke-linejoin="round" d="M6 40 L10 14 L23 26 L32 6 L41 26 L54 14 L58 40 Z"/>
+    <rect x="6" y="43" width="52" height="5.5" rx="2.6" fill="url(#chromeFill)" stroke="#04070b" stroke-width="2"/>
+    <circle cx="10" cy="9.5" r="3.4" fill="url(#chromeFill)" stroke="#04070b" stroke-width="1.6"/>
+    <circle cx="32" cy="3.4" r="3.6" fill="url(#chromeFill)" stroke="#04070b" stroke-width="1.6"/>
+    <circle cx="54" cy="9.5" r="3.4" fill="url(#chromeFill)" stroke="#04070b" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/>
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9.5" r="2.8"/><path d="M16 14.2a5.6 5.6 0 0 1 5.5 5.8"/>
+  </symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1.5 17.5v-9h13v9"/><path d="M14.5 11.5h4.6l3.4 3.6v2.4h-2"/><circle cx="6.3" cy="17.6" r="1.9"/><circle cx="16.8" cy="17.6" r="1.9"/><path d="M8.2 17.6h6.7M11.2 9.5h3"/>
+  </symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><path d="M3.5 9.5h17M3.5 14.5h17"/>
+  </symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H4.5a3 3 0 0 0 3.4 4M17 6h2.5a3 3 0 0 1-3.4 4"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/>
+  </symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5L19.5 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5L16 16"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 3L10.2 13.8M21 3l-7 18-3.8-7.2L3 10z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.4-7.5 9.5-4.3-1.1-7.5-4.9-7.5-9.5V6L12 3z"/><path d="M9.3 12l2 2 3.6-3.8"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-9.3-9.6C1.5 6.9 4.4 4 7.6 4c1.9 0 3.5 1 4.4 2.4C12.9 5 14.5 4 16.4 4c3.2 0 6.1 2.9 4.9 6.4C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11L9.5 22 18 10.5h-6.5L13 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+  <symbol id="i-discord" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 2.9a.07.07 0 0 0-.08.04c-.21.38-.44.87-.6 1.25a18.3 18.3 0 0 0-5.5 0 12.6 12.6 0 0 0-.6-1.25.08.08 0 0 0-.08-.04A19.7 19.7 0 0 0 3.7 4.4a.07.07 0 0 0-.03.03C.5 9.05-.33 13.6.1 18.06a.08.08 0 0 0 .03.06 19.9 19.9 0 0 0 5.99 3.03.08.08 0 0 0 .09-.03c.46-.62.87-1.28 1.22-1.99a.08.08 0 0 0-.04-.11 13.1 13.1 0 0 1-1.87-.89.08.08 0 0 1 0-.13c.13-.1.25-.2.37-.29a.07.07 0 0 1 .08-.01 14.2 14.2 0 0 0 12.1 0 .07.07 0 0 1 .08.01c.12.09.24.2.37.3a.08.08 0 0 1 0 .13c-.6.35-1.22.64-1.88.89a.08.08 0 0 0-.04.11c.36.7.77 1.37 1.23 1.99a.08.08 0 0 0 .08.03 19.8 19.8 0 0 0 6-3.03.08.08 0 0 0 .04-.06c.5-5.18-.84-9.69-3.56-13.7a.06.06 0 0 0-.03-.03zM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.17 1.09 2.15 2.42 0 1.33-.96 2.42-2.15 2.42zm7.97 0c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.17 1.09 2.15 2.42 0 1.33-.95 2.42-2.15 2.42z"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.5a4 4 0 0 0-.28-1.4 2.9 2.9 0 0 0-1.73-1.72C19.26 4 12 4 12 4s-7.26 0-8.99.38A2.9 2.9 0 0 0 1.28 6.1 41.4 41.4 0 0 0 .9 12a41.4 41.4 0 0 0 .38 5.9 2.9 2.9 0 0 0 1.73 1.72C4.74 20 12 20 12 20s7.26 0 8.99-.38a2.9 2.9 0 0 0 1.73-1.72A41.4 41.4 0 0 0 23.1 12a41.4 41.4 0 0 0-.1-4.5zM10.3 15.3V8.7l6 3.3z"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6.5L20 11"/><path d="M6.5 9.5V20h11V9.5"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4.5 17l5-5 4 4 3-3 3 3"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.5" r="1.15" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="#ana-sayfa" aria-label="CaddeGarage ana sayfa">
+      <img class="brand-logo" src="assets/img/logo.png" alt="CaddeGarage — krom taç ve CADDE GARAGE yazısı" width="640" height="597">
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Ana menü">
+      <a href="#ana-sayfa" class="nav-link active" data-nav="ana-sayfa">Ana Sayfa</a>
+      <a href="#hakkimizda" class="nav-link" data-nav="hakkimizda">Hakkımızda</a>
+      <a href="#filo" class="nav-link" data-nav="filo">Filo</a>
+      <a href="#galeri" class="nav-link" data-nav="galeri">Galeri</a>
+      <a href="#basvuru" class="nav-link" data-nav="basvuru">Başvuru</a>
+      <a href="#iletisim" class="nav-link" data-nav="iletisim">İletişim</a>
+    </nav>
+
+    <button class="btn-panel" id="openPanelBtn" type="button">
+      <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
+      <span>Sürücü Paneli</span>
+    </button>
+
+    <button class="hamburger" id="hamburger" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <a href="#ana-sayfa" class="mnav-link">Ana Sayfa</a>
+    <a href="#hakkimizda" class="mnav-link">Hakkımızda</a>
+    <a href="#filo" class="mnav-link">Filo</a>
+    <a href="#galeri" class="mnav-link">Galeri</a>
+    <a href="#basvuru" class="mnav-link">Başvuru</a>
+    <a href="#iletisim" class="mnav-link">İletişim</a>
+    <button class="btn-panel mnav-panel" id="openPanelBtnMobile" type="button">
+      <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
+      <span>Sürücü Paneli</span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section id="ana-sayfa" class="hero" aria-label="CaddeGarage tanıtım">
+  <div class="hero-art" role="img" aria-label="Fırtınalı bir gecede yağmurlu yolda duran siyah CaddeGarage tırı"></div>
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+    <p class="hero-eyebrow"><span class="eyebrow-line"></span>SANAL YOLLARDA GERÇEK TAKIM RUHU<span class="eyebrow-line"></span></p>
+    <h1 class="hero-title">CADDE<span>GARAGE</span></h1>
+    <p class="hero-sub">Yolların en güçlü ekibiyle,<br>birlikte daha ileriye…</p>
+    <a href="#hakkimizda" class="btn btn-light hero-cta">Hakkımızda<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+  </div>
+</section>
+
+<!-- ===== İSTATİSTİK ŞERİDİ ===== -->
+<div class="stats-wrap" id="istatistikler">
+  <div class="container stats-bar">
+    <div class="stat">
+      <svg class="stat-icon" aria-hidden="true"><use href="#i-users"/></svg>
+      <div class="stat-text"><strong><span data-counter="1250" data-prefix="+">+0</span></strong><span>Aktif Üye</span></div>
+    </div>
+    <div class="stat">
+      <svg class="stat-icon" aria-hidden="true"><use href="#i-truck"/></svg>
+      <div class="stat-text"><strong><span data-counter="50" data-prefix="+">+0</span></strong><span>Filo Aracı</span></div>
+    </div>
+    <div class="stat">
+      <svg class="stat-icon" aria-hidden="true"><use href="#i-globe"/></svg>
+      <div class="stat-text"><strong><span data-counter="15" data-prefix="+">+0</span></strong><span>Konvoy</span></div>
+    </div>
+    <div class="stat">
+      <svg class="stat-icon" aria-hidden="true"><use href="#i-trophy"/></svg>
+      <div class="stat-text"><strong><span data-counter="100" data-prefix="%">%0</span></strong><span>Takım Ruhu</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== KART ŞERİDİ (orijinalin alt kartları) ===== -->
+<section class="container highlight-cards" aria-label="Öne çıkanlar">
+
+  <article class="hcard">
+    <div class="hcard-body hcard-about">
+      <h2 class="hcard-title"><span class="slash-accent">///</span> Hakkımızda</h2>
+      <p class="hcard-text">CaddeGarage, ETS2 dünyasında birlik, dostluk ve profesyonellik üzerine kurulmuş sanal bir lojistik firmasıdır. Amacımız, sadece taşımacılık yapmak değil, aynı zamanda güçlü bir topluluk olmaktır.</p>
+      <a href="#hakkimizda" class="btn btn-light btn-sm">Devamını Oku<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+    </div>
+    <div class="hcard-art art-about" role="img" aria-label="Yağmurlu gecede siyah CaddeGarage tırı"></div>
+  </article>
+
+  <article class="hcard">
+    <div class="hcard-art fill-art art-fleet" role="img" aria-label="Gün batımında sıra halinde dizilmiş siyah tırlar">
+      <span class="art-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-image"/></svg> Filo Galerimiz</span>
+      <a href="#galeri" class="btn btn-ghost btn-sm art-btn">Tüm Galeriye Git</a>
+    </div>
+  </article>
+
+  <article class="hcard">
+    <div class="hcard-art fill-art art-convoy" role="img" aria-label="Gün batımına doğru ilerleyen konvoy">
+      <span class="art-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg> Konvoy Takvimi</span>
+      <div class="convoy-mini">
+        <div class="date-badge"><strong>23</strong><span>KAS</span></div>
+        <div class="convoy-mini-info">
+          <strong>CaddeGarage Konvoyu</strong>
+          <span class="convoy-time"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-clock"/></svg> 21:00 (TSİ)</span>
+        </div>
+      </div>
+      <button type="button" class="btn btn-ghost btn-sm art-btn" id="openConvoyModalBtn">Detayları Gör</button>
+    </div>
+  </article>
+
+  <article class="hcard">
+    <div class="hcard-art fill-art art-apply" role="img" aria-label="Islak asfalt üzerinde duran krom taç">
+      <span class="art-title"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-user"/></svg> Başvuru</span>
+      <div class="apply-mini">
+        <p class="hcard-text">Ekibimize katılmak ve bu büyük ailenin bir parçası olmak için başvurunu yap!</p>
+        <a href="#basvuru" class="btn btn-light btn-sm">Başvuru Yap<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<!-- ===== HAKKIMIZDA ===== -->
+<section id="hakkimizda" class="section section-about">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow"><span class="tick">///</span> BİZ KİMİZ?</span>
+      <h2 class="section-title">Yolların <em>Sessiz Gücü</em></h2>
+      <p class="section-lead">CaddeGarage, sadece ETS2'de tır sürmek değil; aynı rüzgârı, aynı müziği ve aynı rotayı paylaşmak demektir.</p>
+    </div>
+
+    <div class="about-grid">
+      <figure class="about-media">
+        <img src="assets/img/about-truck.svg" alt="Sisli bir gecede farlarını yakmış siyah CaddeGarage tırı" loading="lazy">
+        <figcaption class="about-badge"><svg class="icon" aria-hidden="true"><use href="#i-crown"/></svg><span>EST. 2019<br><b>CaddeGarage</b></span></figcaption>
+      </figure>
+
+      <div class="about-text">
+        <p>CaddeGarage; Euro Truck Simulator 2 üzerinde konvoylarımız, filo organizasyonlarımız ve Discord topluluğumuzla büyüyen <strong>sanal bir lojistik şirketi</strong> ve <strong>sürücü ailesidir</strong>. Her hafta düzenli konvoylar, araç fotoğraf çekimleri ve özel etkinliklerle yollarda buluşuruz.</p>
+        <ul class="check-list">
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Haftalık düzenli konvoylar ve fotoğraf çekimleri</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Özel siyah boyalı filo: Scania, Volvo, Actros, DAF, TGX</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Aktif Discord topluluğu, olay destek hattı ve koçluk programı</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Gerçekçilik odaklı sürüş: kamyon fiziği, yorgunluk ve trafik kuralları</li>
+        </ul>
+
+        <div class="value-grid">
+          <div class="value-card">
+            <svg class="value-icon" aria-hidden="true"><use href="#i-users"/></svg>
+            <h3>Takım Ruhu</h3>
+            <p>Konvoyda kimse geride kalmaz; tempo her zaman en yavaş üyeye göre ayarlanır.</p>
+          </div>
+          <div class="value-card">
+            <svg class="value-icon" aria-hidden="true"><use href="#i-shield"/></svg>
+            <h3>Profesyonellik</h3>
+            <p>Gerçek lojistik disiplinini sanal yollarda birebir yaşatırız: planlama, rota, karayolu kuralları.</p>
+          </div>
+          <div class="value-card">
+            <svg class="value-icon" aria-hidden="true"><use href="#i-heart"/></svg>
+            <h3>Dostluk</h3>
+            <p>Birlikte geçirilen kilometreler; sohbet, paylaşım ve unutulmaz anılar biriktirir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FİLO ===== -->
+<section id="filo" class="section section-fleet">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <span class="section-eyebrow"><span class="tick">///</span> FİLOMUZ</span>
+        <h2 class="section-title">Demir <em>Kadro</em></h2>
+      </div>
+      <label class="fleet-search" for="fleetSearch">
+        <svg class="icon icon-sm" aria-hidden="true"><use href="#i-search"/></svg>
+        <input type="search" id="fleetSearch" placeholder="Tır, kaptan veya plaka ara…" autocomplete="off" aria-label="Filoda ara">
+      </label>
+    </div>
+
+    <div class="fleet-grid" id="fleetGrid"><!-- JS ile doldurulur --></div>
+    <p class="fleet-empty" id="fleetEmpty" hidden>Sonuç bulunamadı. Farklı bir anahtar kelime dene.</p>
+    <p class="fleet-note"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-info"/></svg> Filomuzda 50+ araç bulunur; aşağıda kaptan üyelerimizin vitrin tırları listelenmektedir. Tavan çakarlarımız her zaman açık!</p>
+  </div>
+</section>
+
+<!-- ===== GALERİ ===== -->
+<section id="galeri" class="section section-gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow"><span class="tick">///</span> ANILAR</span>
+      <h2 class="section-title">Filo <em>Galerimiz</em></h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"><!-- JS ile doldurulur --></div>
+  </div>
+</section>
+
+<!-- ===== KONVOYLAR ===== -->
+<section id="konvoylar" class="section section-convoy">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <span class="section-eyebrow"><span class="tick">///</span> ETKİNLİKLER</span>
+        <h2 class="section-title">Yaklaşan <em>Konvoylar</em></h2>
+      </div>
+      <span class="tsiclock" id="tsiClock" aria-label="Türkiye saati">--:--:-- TSİ</span>
+    </div>
+    <div class="convoy-grid" id="convoyGrid"><!-- JS ile doldurulur --></div>
+  </div>
+</section>
+
+<!-- ===== BAŞVURU ===== -->
+<section id="basvuru" class="section section-apply">
+  <div class="container">
+    <div class="apply-grid">
+
+      <div class="apply-side">
+        <span class="section-eyebrow"><span class="tick">///</span> ARAMIZA KATIL</span>
+        <h2 class="section-title">Başvuru <em>Formu</em></h2>
+        <p class="section-lead">CaddeGarage seni bekliyor. Formu doldur, ekibimiz en geç 3 gün içinde başvurunu değerlendirsin.</p>
+        <ul class="check-list apply-reqs">
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Euro Truck Simulator 2 (oyuna sahip olman yeterli)</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Discord hesabı — tüm duyurular oradan akar</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Ayda en az 1 konvoya katılım</li>
+          <li><svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg>Hilesiz, saygılı ve takım ruhuna uygun sürüş</li>
+        </ul>
+        <div class="apply-quote">
+          <svg class="icon" aria-hidden="true"><use href="#i-crown"/></svg>
+          <p>“Biz yola çıkınca arkada senden başka iz kalmaz; sadece takım kalır.”</p>
+        </div>
+      </div>
+
+      <form class="apply-form" id="applyForm" novalidate>
+        <div id="applyFormFields">
+          <div class="form-row">
+            <div class="field">
+              <label for="fNick">ETS2 Nickname *</label>
+              <input type="text" id="fNick" name="nick" placeholder="ör. Maries_07" required minlength="3" maxlength="32" autocomplete="off">
+              <span class="field-error" data-error-for="fNick"></span>
+            </div>
+            <div class="field">
+              <label for="fDiscord">Discord Kullanıcı Adı *</label>
+              <input type="text" id="fDiscord" name="discord" placeholder="ör. maries_07" required minlength="2" maxlength="40" autocomplete="off">
+              <span class="field-error" data-error-for="fDiscord"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="fAge">Yaşın *</label>
+              <input type="number" id="fAge" name="age" placeholder="18" required min="13" max="80" inputmode="numeric">
+              <span class="field-error" data-error-for="fAge"></span>
+            </div>
+            <div class="field">
+              <label for="fExp">ETS2 Deneyimin</label>
+              <select id="fExp" name="exp">
+                <option value="0-100">0 – 100 saat</option>
+                <option value="100-500" selected>100 – 500 saat</option>
+                <option value="500-1000">500 – 1000 saat</option>
+                <option value="1000+">1000+ saat</option>
+              </select>
+              <span class="field-error" data-error-for="fExp"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fBrand">Favori Tır Markası</label>
+            <select id="fBrand" name="brand">
+              <option>Scania</option>
+              <option>Volvo</option>
+              <option>Mercedes-Benz</option>
+              <option>MAN</option>
+              <option>DAF</option>
+              <option>Kenworth</option>
+              <option>Fark etmez, hepsi siyah!</option>
+            </select>
+            <span class="field-error" data-error-for="fBrand"></span>
+          </div>
+
+          <div class="field">
+            <label for="fWhy">Neden CaddeGarage? *</label>
+            <textarea id="fWhy" name="why" rows="4" placeholder="Kısaca kendinden ve neden katılmak istediğinden bahset…" required minlength="20" maxlength="800"></textarea>
+            <span class="field-error" data-error-for="fWhy"></span>
+            <span class="char-count"><span id="whyCount">0</span>/800</span>
+          </div>
+
+          <label class="checkbox-line" for="fRules">
+            <input type="checkbox" id="fRules" name="rules" required>
+            <span class="checkbox-box"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <span>CaddeGarage <a href="#sss">topluluk kurallarını</a> okudum ve kabul ediyorum.</span>
+          </label>
+          <span class="field-error" data-error-for="fRules"></span>
+
+          <button type="submit" class="btn btn-light btn-lg btn-block" id="applySubmitBtn">Başvurunu Gönder<svg class="icon icon-sm" aria-hidden="true"><use href="#i-send"/></svg></button>
+        </div>
+
+        <div class="apply-success" id="applySuccess" hidden>
+          <div class="success-ring"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></div>
+          <h3>Başvurun alındı!</h3>
+          <p>Ekibimiz başvurunu en geç <strong>3 gün</strong> içinde değerlendirecek. Discord üzerinden seni bekliyor olacağız.</p>
+          <div class="ref-chip">Başvuru No: <b id="applyRefNo">CG-2026-0000</b></div>
+          <button type="button" class="btn btn-ghost btn-sm" id="trackApplicationBtn">Başvurumu Panele Git<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SSS + İLETİŞİM ===== -->
+<section id="iletisim" class="section section-contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow"><span class="tick">///</span> BİZE ULAŞ</span>
+      <h2 class="section-title">İletişim <em>&amp; SSS</em></h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a class="info-tile" href="https://discord.gg/caddegarage" target="_blank" rel="noopener noreferrer">
+          <svg class="info-icon" aria-hidden="true"><use href="#i-discord"/></svg>
+          <span class="info-body"><strong>Discord</strong><small>discord.gg/caddegarage</small></span>
+          <svg class="icon icon-sm info-go" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a class="info-tile" href="mailto:info@caddegarage.gg">
+          <svg class="info-icon" aria-hidden="true"><use href="#i-mail"/></svg>
+          <span class="info-body"><strong>E-posta</strong><small>info@caddegarage.gg</small></span>
+          <svg class="icon icon-sm info-go" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </a>
+        <div class="info-tile static">
+          <svg class="info-icon" aria-hidden="true"><use href="#i-clock"/></svg>
+          <span class="info-body"><strong>Konvoy Saati</strong><small>Her Cumartesi 21:00 TSİ — Discord ses kanalında buluşuruz</small></span>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <h3>Bize Yaz</h3>
+          <div class="form-row">
+            <div class="field">
+              <label for="cName">Adınız *</label>
+              <input type="text" id="cName" required minlength="2" placeholder="Adın Soyadın">
+              <span class="field-error" data-error-for="cName"></span>
+            </div>
+            <div class="field">
+              <label for="cSubject">Konu</label>
+              <select id="cSubject">
+                <option>Genel Soru</option>
+                <option>Başvuru Durumu</option>
+                <option>Konvoy &amp; Etkinlik</option>
+                <option>Filo / Alet Çantası</option>
+                <option>İş Birliği</option>
+              </select>
+              <span class="field-error" data-error-for="cSubject"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cMessage">Mesajınız *</label>
+            <textarea id="cMessage" rows="3" required minlength="10" placeholder="Mesajını yaz…"></textarea>
+            <span class="field-error" data-error-for="cMessage"></span>
+          </div>
+          <button type="submit" class="btn btn-ghost">Gönder<svg class="icon icon-sm" aria-hidden="true"><use href="#i-send"/></svg></button>
+        </form>
+      </div>
+
+      <div class="faq" id="sss" aria-label="Sık sorulan sorular">
+        <h3 class="faq-heading">Sık Sorulan Sorular</h3>
+
+        <div class="faq-item open">
+          <button type="button" class="faq-q" aria-expanded="true">CaddeGarage'e nasıl katılırım?<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+          <div class="faq-a"><p>Bu sayfadaki başvuru formunu doldur + Discord sunucumuza katıl. Ekibimiz 3 gün içinde sana döner; ardından bir deneme sürüşümüze (konvoyumuza) davet edilirsin.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Konvoylara katılmak zorunlu mu?<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+          <div class="faq-a"><p>Ayda en az bir konvoy "aile" hissini canlı tutmak için zorunlu; ancak sınavın değil, alışmanın parçası. Gelemediğinde haber vermen yeterli.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Hangi modlar serbest, hangileri değil?<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+          <div class="faq-a"><p>Gerçekçilik paketleri, ses paketleri ve harita modları serbest; hız hilesi, sonsuz yakıt ve trafik engelleme modları kesinlikle yasak. Konvoyda 80 km/s'nin üstüne çıkılmaz.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Sürücü Paneli nedir ve ne işe yarar?<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+          <div class="faq-a"><p>Sağ üstteki <strong>Sürücü Paneli</strong> ile hesabına giriş yapıp istatistiklerini, badge'lerini ve başvuru durumunu görebilirsin. Demo sürümde rastgele bir profil oluşturur; asıl sürümünde Discord hesabınla bağlanır.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Filomuza kendi tırımı ekleyebilir miyim?<svg class="icon icon-sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></button>
+          <div class="faq-a"><p>Evet! Siyah renkli, kurallara uygun herhangi bir tırını (veya önerdiğin dorse tasarımını) ile gönder; filo sorumlumuz değerlendirip kadroya alır.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-main">
+    <a class="brand footer-brand" href="#ana-sayfa" aria-label="CaddeGarage ana sayfa">
+      <img class="brand-logo" src="assets/img/logo.png" alt="CaddeGarage — krom taç ve CADDE GARAGE yazısı" width="640" height="597">
+    </a>
+
+    <p class="footer-quote"><span class="quote-line"></span>“Yollar bitse de, dostluk bitmez...”<span class="quote-line"></span></p>
+
+    <div class="footer-right">
+      <div class="social-row">
+        <a class="social-icon" href="https://discord.gg/caddegarage" target="_blank" rel="noopener noreferrer" aria-label="Discord sunucumuz"><svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg></a>
+        <a class="social-icon" href="https://www.youtube.com/@caddegarage" target="_blank" rel="noopener noreferrer" aria-label="YouTube kanalımız"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a>
+        <a class="social-icon" href="https://www.instagram.com/caddegarage" target="_blank" rel="noopener noreferrer" aria-label="Instagram hesabımız"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+      </div>
+      <p class="footer-script">Drive Together<br>Be Stronger</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span id="footerYear">2026</span> CaddeGarage. Tüm Hakları Saklıdır.</p>
+    <p class="footer-tagline">Sanal Lojistikte <em>Yeni Bir Anlayış…</em></p>
+  </div>
+</footer>
+
+<!-- ===== SÜRÜCÜ PANELİ MODAL ===== -->
+<div class="modal-backdrop" id="panelModal" role="dialog" aria-modal="true" aria-labelledby="panelTitle" hidden>
+  <div class="modal-card">
+    <button class="modal-close" id="closePanelBtn" type="button" aria-label="Kapat"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+
+    <!-- Giriş görünümü -->
+    <div class="panel-login" id="panelLoginView">
+      <div class="panel-crown"><img class="panel-logo" src="assets/img/logo.png" alt="" width="640" height="597"></div>
+      <h2 class="panel-title" id="panelTitle">Sürücü Paneli</h2>
+      <p class="panel-sub">Nickinle giriş yap; kilometrelerini, konvoylarını ve başvurunu görüntüle.</p>
+      <form id="panelLoginForm" novalidate>
+        <div class="field">
+          <label for="pNick">ETS2 Nickname *</label>
+          <input type="text" id="pNick" placeholder="ör. Maries_07" required minlength="3" maxlength="32" autocomplete="username">
+          <span class="field-error" data-error-for="pNick"></span>
+        </div>
+        <div class="field">
+          <label for="pPass">Şifre *</label>
+          <input type="password" id="pPass" placeholder="En az 4 karakter" required minlength="4" maxlength="64" autocomplete="current-password">
+          <span class="field-error" data-error-for="pPass"></span>
+        </div>
+        <button type="submit" class="btn btn-light btn-block">Giriş Yap<svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+      </form>
+      <p class="panel-demo-note"><svg class="icon icon-xs" aria-hidden="true"><use href="#i-info"/></svg> Demo sürümü: herhangi bir nick ve şifre ile giriş yapabilirsin.</p>
+    </div>
+
+    <!-- Panel görünümü -->
+    <div class="panel-dash" id="panelDashView" hidden>
+      <div class="panel-dash-head">
+        <div class="panel-avatar" id="panelAvatar">M</div>
+        <div>
+          <h2 class="panel-title panel-title-sm">Hoş geldin, <span id="panelNickEcho">Sürücü</span></h2>
+          <p class="panel-sub">CaddeGarage Filosu — <span class="rank-chip" id="panelRank">Kıdemli Sürücü</span></p>
+        </div>
+      </div>
+
+      <div class="panel-stats">
+        <div class="pstat"><small>Toplam Kilometre</small><strong id="pKm">0</strong></div>
+        <div class="pstat"><small>Konvoy Katılımı</small><strong id="pConvoys">0</strong></div>
+        <div class="pstat"><small>Filo Sıralaması</small><strong id="pSort">#0</strong></div>
+      </div>
+
+      <div class="panel-section">
+        <h3>Badge'lerin</h3>
+        <div class="badge-row" id="panelBadges"><!-- JS --></div>
+      </div>
+
+      <div class="panel-section">
+        <h3>Başvuru Durumun</h3>
+        <div class="app-status" id="panelAppStatus"><!-- JS --></div>
+      </div>
+
+      <button type="button" class="btn btn-ghost btn-block" id="panelLogoutBtn">Çıkış Yap</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== KONVOY DETAY MODAL ===== -->
+<div class="modal-backdrop" id="convoyModal" role="dialog" aria-modal="true" aria-labelledby="convoyModalTitle" hidden>
+  <div class="modal-card convoy-modal-card">
+    <button class="modal-close" id="closeConvoyModalBtn" type="button" aria-label="Kapat"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <div class="convoy-modal-body">
+      <div class="date-badge date-badge-lg"><strong>23</strong><span>KAS</span></div>
+      <div class="convoy-modal-info">
+        <h2 class="panel-title panel-title-sm" id="convoyModalTitle">CaddeGarage Konvoyu</h2>
+        <p class="convoy-route"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-pin"/></svg> İstanbul (Tuzla) → Ankara (AŞTİ) — E80</p>
+        <ul class="convoy-rules">
+          <li><svg class="icon icon-xs" aria-hidden="true"><use href="#i-clock"/></svg> Kalkış: 23 Kasım, <strong>21:00 TSİ</strong> (Discord ses kanalı: #konvoy-hazirlik)</li>
+          <li><svg class="icon icon-xs" aria-hidden="true"><use href="#i-truck"/></svg> Hız limiti 80 km/s, yakın takip ve ani fren yok</li>
+          <li><svg class="icon icon-xs" aria-hidden="true"><use href="#i-zap"/></svg> Tavan çakarlar ve farlar açık; konvoy liderini takip et</li>
+          <li><svg class="icon icon-xs" aria-hidden="true"><use href="#i-users"/></svg> Konvoyda <strong id="convoyModalCount">34</strong>/80 sürücü onayladı</li>
+        </ul>
+        <button type="button" class="btn btn-light btn-block join-convoy-btn" data-convoy-id="konvoy-2311" data-convoy-name="CaddeGarage Konvoyu">Katılıyorum<svg class="icon icon-sm" aria-hidden="true"><use href="#i-check"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeri görüntüleyici" hidden>
+  <button class="lightbox-btn lb-close" id="lbClose" type="button" aria-label="Kapat"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+  <button class="lightbox-btn lb-prev" id="lbPrev" type="button" aria-label="Önceki fotoğraf"><svg class="icon lb-chev-left" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+  <figure class="lightbox-figure">
+    <img id="lbImage" src="" alt="">
+    <figcaption class="lightbox-caption"><span id="lbCounter">1 / 6</span><p id="lbCaption"></p></figcaption>
+  </figure>
+  <button class="lightbox-btn lb-next" id="lbNext" type="button" aria-label="Sonraki fotoğraf"><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast" role="status" aria-live="polite" hidden><span id="toastText"></span></div>
+
+<!-- ===== BAŞA DÖN ===== -->
+<button class="back-top" id="backTopBtn" type="button" aria-label="Yukarı dön" hidden><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

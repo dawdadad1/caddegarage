@@ -1,0 +1,13 @@
+# Araç/işletim sistemi kalıntıları
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Yerel geliştirme
+node_modules/
+*.log
+.wrangler/
+.env
+
+# Kaynak/ara işler (yayınlanmaz)
+tools/build-*.py
